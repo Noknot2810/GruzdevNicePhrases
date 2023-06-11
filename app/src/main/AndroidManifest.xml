@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GruzdevNicePhrases">
         <activity
+            android:name=".ui.main.SlistActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.main.SectionActivity"
             android:exported="false" />
         <activity

@@ -9,4 +9,6 @@ class SectionRepository (
     suspend fun new_section(item: Section) = db.getSectionDao().new_section(item)
 
     suspend fun del_section(item: Section) = db.getSectionDao().del_section(item)
+
+    fun get_all_sections() = db.getSectionDao().get_all_sections()
 }

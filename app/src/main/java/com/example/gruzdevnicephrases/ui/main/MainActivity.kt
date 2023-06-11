@@ -39,7 +39,9 @@ class MainActivity : AppCompatActivity(), KodeinAware {
         val viewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
 
         binding.ivAddPhrase.setOnClickListener {
-            val intent = Intent(this@MainActivity, SectionActivity::class.java).apply {  }
+            //val intent = Intent(this@MainActivity, SectionActivity::class.java).apply {  }
+
+            val intent = Intent(this@MainActivity, SlistActivity::class.java).apply {  }
             startActivity(intent)
             binding.txtAnnounce.text = "Tap below to know the day phrase"
             binding.ivDayPhrase.isEnabled = true
