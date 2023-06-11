@@ -1,5 +1,6 @@
 package com.example.gruzdevnicephrases.data.db.entities
 
+import androidx.annotation.Nullable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
@@ -16,7 +17,8 @@ data class Phrase(
     @ColumnInfo(name = "phrase_text")
     var text: String,
     @ColumnInfo(name = "phrase_section_id")
-    var section_id: Int,
+    @Nullable
+    var section_id: Int?,
     @ColumnInfo(name = "phrase_grades_count")
     var gcount: Int,
     @ColumnInfo(name = "phrase_grades_rating")

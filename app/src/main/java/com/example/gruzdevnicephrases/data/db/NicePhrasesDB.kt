@@ -9,7 +9,7 @@ import com.example.gruzdevnicephrases.data.db.entities.Section
 
 @Database(
     entities = [Section::class, Phrase::class],
-    version = 1
+    version = 2
 )
 abstract class NicePhrasesDB : RoomDatabase() {
     abstract fun getSectionDao(): SectionDao
@@ -26,6 +26,6 @@ abstract class NicePhrasesDB : RoomDatabase() {
 
         private fun createDatabase(context: Context) =
             Room.databaseBuilder(context.applicationContext,
-                NicePhrasesDB::class.java,"NPDB").build()
+                NicePhrasesDB::class.java,"NPDB").fallbackToDestructiveMigration().build()
     }
 }
