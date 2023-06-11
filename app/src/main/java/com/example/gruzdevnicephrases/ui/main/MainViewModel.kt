@@ -22,7 +22,7 @@ class MainViewModel (
 
     fun get_all_phrases() = repository.get_all_phrases()
 
-    suspend fun get_random_phrase() = repository.get_random_phrase()
+    //suspend fun get_random_phrase() = repository.get_random_phrase()
 
     suspend fun create_day_phrase(d: Int, m: Int, y: Int) = repository.create_day_phrase(d, m, y)
 

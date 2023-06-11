@@ -5,17 +5,11 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.isInvisible
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.gruzdevnicephrases.R
-import com.example.gruzdevnicephrases.data.db.NicePhrasesDB
-import com.example.gruzdevnicephrases.data.db.entities.Phrase
-import com.example.gruzdevnicephrases.data.repositories.PhrasesRepository
 import com.example.gruzdevnicephrases.databinding.ActivityMainBinding
-import com.example.gruzdevnicephrases.others.PhraseAdapter
+import com.example.gruzdevnicephrases.ui.section.SectionActivity
+import com.example.gruzdevnicephrases.ui.slist.SlistActivity
 import kotlinx.coroutines.*
-import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
 import org.kodein.di.generic.instance
@@ -27,7 +21,7 @@ class MainActivity : AppCompatActivity(), KodeinAware {
 
     override val kodein by kodein()
     private val factory: MainViewModelFactory by instance()
-    private val db: NicePhrasesDB by instance()
+    //private val db: NicePhrasesDB by instance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,9 +32,16 @@ class MainActivity : AppCompatActivity(), KodeinAware {
 
         val viewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
 
-        binding.ivAddPhrase.setOnClickListener {
-            //val intent = Intent(this@MainActivity, SectionActivity::class.java).apply {  }
+        binding.ivGetPhrases.setOnClickListener {
+            val intent = Intent(this@MainActivity, SectionActivity::class.java).apply {  }
+            startActivity(intent)
+            binding.txtAnnounce.text = "Tap below to know the day phrase"
+            binding.ivDayPhrase.isEnabled = true
+            binding.ivDayPhrase.isInvisible = false
+            binding.txtDayPhrase.isInvisible = true
+        }
 
+        binding.ivGetSections.setOnClickListener {
             val intent = Intent(this@MainActivity, SlistActivity::class.java).apply {  }
             startActivity(intent)
             binding.txtAnnounce.text = "Tap below to know the day phrase"

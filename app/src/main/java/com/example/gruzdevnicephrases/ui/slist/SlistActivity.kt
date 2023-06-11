@@ -1,11 +1,10 @@
-package com.example.gruzdevnicephrases.ui.main
+package com.example.gruzdevnicephrases.ui.slist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.gruzdevnicephrases.R
 import com.example.gruzdevnicephrases.data.db.entities.Section
 import com.example.gruzdevnicephrases.databinding.ActivitySlistBinding
 import com.example.gruzdevnicephrases.others.SectionAdapter
@@ -26,7 +25,7 @@ class SlistActivity: AppCompatActivity(), KodeinAware {
 
         val viewModel = ViewModelProviders.of(this, factory).get(SListViewModel::class.java)
 
-        /*val adapter = SectionAdapter(listOf(), viewModel)
+        val adapter = SectionAdapter(listOf(), viewModel)
 
         binding.rvSections.layoutManager = LinearLayoutManager(this)
         binding.rvSections.adapter = adapter
@@ -44,6 +43,6 @@ class SlistActivity: AppCompatActivity(), KodeinAware {
                         viewModel.new_section(item)
                     }
                 }).show()
-        }*/
+        }
     }
 }

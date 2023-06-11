@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gruzdevnicephrases.data.db.entities.Section
 import com.example.gruzdevnicephrases.databinding.SectionItemBinding
-import com.example.gruzdevnicephrases.ui.main.SListViewModel
+import com.example.gruzdevnicephrases.ui.slist.SListViewModel
 
 class SectionAdapter (
     var sections: List<Section>,

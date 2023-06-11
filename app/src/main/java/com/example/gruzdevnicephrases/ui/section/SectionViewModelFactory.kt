@@ -1,4 +1,4 @@
-package com.example.gruzdevnicephrases.ui.main
+package com.example.gruzdevnicephrases.ui.section
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

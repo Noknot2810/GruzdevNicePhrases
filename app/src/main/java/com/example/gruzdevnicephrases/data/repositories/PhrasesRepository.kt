@@ -12,7 +12,7 @@ class PhrasesRepository (
 
     fun get_all_phrases() = db.getPhrasesDao().get_all_phrases()
 
-    suspend fun get_random_phrase() = db.getPhrasesDao().get_random_phrase()
+    //suspend fun get_random_phrase() = db.getPhrasesDao().get_random_phrase()
 
     suspend fun get_day_phrase(d: Int, m: Int, y: Int) = db.getPhrasesDao().get_day_phrase(d, m, y)
 

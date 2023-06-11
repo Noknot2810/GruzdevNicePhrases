@@ -1,4 +1,4 @@
-package com.example.gruzdevnicephrases.ui.main
+package com.example.gruzdevnicephrases.ui.section
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gruzdevnicephrases.data.db.entities.Phrase
-import com.example.gruzdevnicephrases.databinding.ActivityMainBinding
 import com.example.gruzdevnicephrases.databinding.ActivitySectionBinding
 import com.example.gruzdevnicephrases.others.PhraseAdapter
 import org.kodein.di.KodeinAware

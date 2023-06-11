@@ -3,9 +3,10 @@ package com.example.gruzdevnicephrases
 import android.app.Application
 import com.example.gruzdevnicephrases.data.db.NicePhrasesDB
 import com.example.gruzdevnicephrases.data.repositories.PhrasesRepository
+import com.example.gruzdevnicephrases.data.repositories.SectionRepository
 import com.example.gruzdevnicephrases.ui.main.MainViewModelFactory
-import com.example.gruzdevnicephrases.ui.main.SListViewModelFactory
-import com.example.gruzdevnicephrases.ui.main.SectionViewModelFactory
+import com.example.gruzdevnicephrases.ui.slist.SListViewModelFactory
+import com.example.gruzdevnicephrases.ui.section.SectionViewModelFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.androidXModule
@@ -18,6 +19,7 @@ class NicePhrasesApplication: Application(), KodeinAware {
         import(androidXModule(this@NicePhrasesApplication))
         bind() from singleton { NicePhrasesDB(instance()) }
         bind() from singleton { PhrasesRepository(instance()) }
+        bind() from singleton { SectionRepository(instance()) }
         bind() from singleton {
             SectionViewModelFactory(instance())
         }

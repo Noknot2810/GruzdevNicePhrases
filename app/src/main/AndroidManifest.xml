@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GruzdevNicePhrases">
         <activity
-            android:name=".ui.main.SlistActivity"
+            android:name=".ui.slist.SlistActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.SectionActivity"
+            android:name=".ui.section.SectionActivity"
             android:exported="false" />
         <activity
             android:name=".ui.main.MainActivity"

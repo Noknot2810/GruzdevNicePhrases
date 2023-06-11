@@ -1,11 +1,10 @@
-package com.example.gruzdevnicephrases.ui.main
+package com.example.gruzdevnicephrases.ui.slist
 
 import android.content.Context
 import android.os.Bundle
 import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialog
-import com.example.gruzdevnicephrases.data.db.entities.Phrase
 import com.example.gruzdevnicephrases.data.db.entities.Section
 import com.example.gruzdevnicephrases.databinding.DialogAddSectionBinding
 

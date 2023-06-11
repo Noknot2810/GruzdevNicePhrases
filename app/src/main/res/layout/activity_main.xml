@@ -8,13 +8,20 @@
     android:padding="16dp">
 
     <ImageView
-        android:id="@+id/ivAddPhrase"
+        android:id="@+id/ivGetPhrases"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="4dp"
-        android:src="@drawable/ic_new_phrase"
+        android:src="@drawable/ic_plus_rating"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivGetSections"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/ic_minus_rating"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/ivDayPhrase"

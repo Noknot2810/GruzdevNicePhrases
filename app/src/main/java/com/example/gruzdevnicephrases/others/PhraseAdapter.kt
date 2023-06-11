@@ -1,15 +1,12 @@
 package com.example.gruzdevnicephrases.others
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.RatingBar
 import androidx.recyclerview.widget.RecyclerView
-import com.example.gruzdevnicephrases.R
 import com.example.gruzdevnicephrases.data.db.entities.Phrase
 import com.example.gruzdevnicephrases.databinding.PhraseItemBinding
-import com.example.gruzdevnicephrases.ui.main.MainViewModel
-import com.example.gruzdevnicephrases.ui.main.SectionViewModel
+import com.example.gruzdevnicephrases.ui.section.SectionViewModel
 
 class PhraseAdapter(
     var phrases: List<Phrase>,
@@ -26,7 +23,7 @@ class PhraseAdapter(
         with(holder.binding) {
             val curPhrase = phrases[position]
 
-            txtPhraseText.text = "«" + curPhrase.text + "»" + curPhrase.tday.toString() + curPhrase.tmonth.toString() + curPhrase.tyear.toString()
+            txtPhraseText.text = "«" + curPhrase.text + "»"// + curPhrase.tday.toString() + curPhrase.tmonth.toString() + curPhrase.tyear.toString()
             txtRatingInfo.text = "%.2f".format(curPhrase.grating) +
                     " (" + curPhrase.gcount.toString() + ")"
 

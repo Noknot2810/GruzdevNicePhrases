@@ -1,4 +1,4 @@
-package com.example.gruzdevnicephrases.ui.main
+package com.example.gruzdevnicephrases.ui.slist
 
 import androidx.lifecycle.ViewModel
 import com.example.gruzdevnicephrases.data.db.entities.Phrase
