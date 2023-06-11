@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isInvisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,14 +34,24 @@ class MainActivity : AppCompatActivity(), KodeinAware {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.txtDayPhrase.isInvisible = true
+
         val viewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
 
         binding.ivAddPhrase.setOnClickListener {
             val intent = Intent(this@MainActivity, SectionActivity::class.java).apply {  }
             startActivity(intent)
+            binding.txtAnnounce.text = "Tap below to know the day phrase"
+            binding.ivDayPhrase.isEnabled = true
+            binding.ivDayPhrase.isInvisible = false
+            binding.txtDayPhrase.isInvisible = true
         }
 
         binding.ivDayPhrase.setOnClickListener {
+            binding.txtAnnounce.text = "Phrase of the day:"
+            binding.ivDayPhrase.isEnabled = false
+            binding.ivDayPhrase.isInvisible = true
+            binding.txtDayPhrase.isInvisible = false
             CoroutineScope(Dispatchers.Main).launch {
                 val calendar = Calendar.getInstance()
 

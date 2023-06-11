@@ -18,12 +18,13 @@
 
     <ImageView
         android:id="@+id/ivDayPhrase"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="111dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="32dp"
         android:src="@drawable/ic_get_dphrase"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtDayPhrase" />
 
     <TextView
         android:id="@+id/txtDayPhrase"
@@ -40,7 +41,8 @@
         android:id="@+id/txtAnnounce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phrase of the day:"
+        android:text="Tap below to know the day phrase"
+        android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
