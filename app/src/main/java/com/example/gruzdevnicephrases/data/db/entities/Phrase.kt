@@ -1,10 +1,8 @@
 package com.example.gruzdevnicephrases.data.db.entities
 
 import androidx.annotation.Nullable
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.ForeignKey
-import androidx.room.PrimaryKey
+import androidx.room.*
+import com.example.gruzdevnicephrases.data.db.Date
 
 @Entity(tableName = "users_phrases",
         foreignKeys = [ForeignKey(entity = Section::class,
@@ -22,7 +20,13 @@ data class Phrase(
     @ColumnInfo(name = "phrase_grades_count")
     var gcount: Int,
     @ColumnInfo(name = "phrase_grades_rating")
-    var grating: Float
+    var grating: Float,
+    @ColumnInfo(name = "phrase_tday")
+    var tday: Int?,
+    @ColumnInfo(name = "phrase_tmonth")
+    var tmonth: Int?,
+    @ColumnInfo(name = "phrase_tyear")
+    var tyear: Int?
 ){
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null

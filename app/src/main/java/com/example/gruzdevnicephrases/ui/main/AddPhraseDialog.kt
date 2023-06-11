@@ -6,6 +6,7 @@ import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialog
 import com.example.gruzdevnicephrases.R
+import com.example.gruzdevnicephrases.data.db.Date
 import com.example.gruzdevnicephrases.data.db.entities.Phrase
 import com.example.gruzdevnicephrases.databinding.DialogAddPhraseBinding
 
@@ -26,7 +27,7 @@ class AddPhraseDialog (context: Context, var newDialogListener: NewPhraseDialogL
                 return@setOnClickListener
             }
 
-            val item = Phrase(text, null, 0, 0.0f)
+            val item = Phrase(text, null, 0, 0.0f, null, null, null)
             newDialogListener.onAddButtonClicked(item)
             dismiss()
         }

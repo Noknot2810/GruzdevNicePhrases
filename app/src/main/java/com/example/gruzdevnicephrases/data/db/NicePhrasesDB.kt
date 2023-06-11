@@ -9,7 +9,7 @@ import com.example.gruzdevnicephrases.data.db.entities.Section
 
 @Database(
     entities = [Section::class, Phrase::class],
-    version = 2
+    version = 4
 )
 abstract class NicePhrasesDB : RoomDatabase() {
     abstract fun getSectionDao(): SectionDao

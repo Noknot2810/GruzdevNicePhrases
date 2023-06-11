@@ -9,10 +9,11 @@ import com.example.gruzdevnicephrases.R
 import com.example.gruzdevnicephrases.data.db.entities.Phrase
 import com.example.gruzdevnicephrases.databinding.PhraseItemBinding
 import com.example.gruzdevnicephrases.ui.main.MainViewModel
+import com.example.gruzdevnicephrases.ui.main.SectionViewModel
 
 class PhraseAdapter(
     var phrases: List<Phrase>,
-    private val viewModel: MainViewModel
+    private val viewModel: SectionViewModel
 ): RecyclerView.Adapter<PhraseAdapter.PhrasesViewHolder>() {
     class PhrasesViewHolder(val binding: PhraseItemBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -25,7 +26,7 @@ class PhraseAdapter(
         with(holder.binding) {
             val curPhrase = phrases[position]
 
-            txtPhraseText.text = "«" + curPhrase.text + "»"
+            txtPhraseText.text = "«" + curPhrase.text + "»" + curPhrase.tday.toString() + curPhrase.tmonth.toString() + curPhrase.tyear.toString()
             txtRatingInfo.text = "%.2f".format(curPhrase.grating) +
                     " (" + curPhrase.gcount.toString() + ")"
 
@@ -43,20 +44,6 @@ class PhraseAdapter(
                     ratingPhrase.isEnabled = false
                     viewModel.new_phrase(curPhrase)
                 }
-
-
-            /*
-            ratingPhrase.setOnClickListener(){
-                txtPhraseText.text = curPhrase.text + "!!!"
-                curPhrase.grating = (curPhrase.grating * curPhrase.gcount.toFloat() + ratingPhrase.rating)
-                curPhrase.gcount++
-                curPhrase.grating /= curPhrase.gcount.toFloat()
-                txtRatingInfo.text = curPhrase.grating.toString() +
-                        " (" + curPhrase.gcount.toString() + ")"
-                ratingPhrase.isEnabled = false
-                viewModel.new_phrase(curPhrase)
-            }
-            */
         }
     }
 
