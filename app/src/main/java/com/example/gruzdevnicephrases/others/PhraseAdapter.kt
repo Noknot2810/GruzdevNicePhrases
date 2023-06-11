@@ -3,6 +3,7 @@ package com.example.gruzdevnicephrases.others
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RatingBar
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gruzdevnicephrases.R
 import com.example.gruzdevnicephrases.data.db.entities.Phrase
@@ -24,15 +25,29 @@ class PhraseAdapter(
         with(holder.binding) {
             val curPhrase = phrases[position]
 
-            txtPhraseText.text = curPhrase.text
-            txtRatingInfo.text = curPhrase.grating.toString() +
+            txtPhraseText.text = "«" + curPhrase.text + "»"
+            txtRatingInfo.text = "%.2f".format(curPhrase.grating) +
                     " (" + curPhrase.gcount.toString() + ")"
 
             ivDelete.setOnClickListener {
                 viewModel.del_phrase(curPhrase)
             }
 
+            ratingPhrase.onRatingBarChangeListener =
+                RatingBar.OnRatingBarChangeListener { ratingBar, _, _ ->
+                    curPhrase.grating = (curPhrase.grating * curPhrase.gcount.toFloat() + ratingPhrase.rating)
+                    curPhrase.gcount++
+                    curPhrase.grating /= curPhrase.gcount.toFloat()
+                    txtRatingInfo.text = "%.2f".format(curPhrase.grating) +
+                            " (" + curPhrase.gcount.toString() + ")"
+                    ratingPhrase.isEnabled = false
+                    viewModel.new_phrase(curPhrase)
+                }
+
+
+            /*
             ratingPhrase.setOnClickListener(){
+                txtPhraseText.text = curPhrase.text + "!!!"
                 curPhrase.grating = (curPhrase.grating * curPhrase.gcount.toFloat() + ratingPhrase.rating)
                 curPhrase.gcount++
                 curPhrase.grating /= curPhrase.gcount.toFloat()
@@ -41,11 +56,12 @@ class PhraseAdapter(
                 ratingPhrase.isEnabled = false
                 viewModel.new_phrase(curPhrase)
             }
-
+            */
         }
     }
 
     override fun getItemCount(): Int {
         return phrases.count()
     }
+
 }
