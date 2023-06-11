@@ -14,9 +14,9 @@ class PhrasesRepository (
 
     suspend fun get_random_phrase() = db.getPhrasesDao().get_random_phrase()
 
-    fun get_day_phrase(d: Int, m: Int, y: Int) = db.getPhrasesDao().get_day_phrase(d, m, y)
+    suspend fun get_day_phrase(d: Int, m: Int, y: Int) = db.getPhrasesDao().get_day_phrase(d, m, y)
 
-    fun create_day_phrase(d: Int, m: Int, y: Int) =  db.getPhrasesDao().create_day_phrase(d, m, y)
+    suspend fun create_day_phrase(d: Int, m: Int, y: Int) =  db.getPhrasesDao().create_day_phrase(d, m, y)
 
     fun get_section_phrases(section_id: Int) = db.getPhrasesDao().get_section_phrases(section_id)
 

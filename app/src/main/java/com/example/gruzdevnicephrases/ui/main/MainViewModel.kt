@@ -24,6 +24,9 @@ class MainViewModel (
 
     suspend fun get_random_phrase() = repository.get_random_phrase()
 
+    suspend fun create_day_phrase(d: Int, m: Int, y: Int) = repository.create_day_phrase(d, m, y)
+
+    suspend fun get_day_phrase(d: Int, m: Int, y: Int) = repository.get_day_phrase(d, m, y)
     //fun get_random_phrase() = CoroutineScope(Dispatchers.Main).launch {
     //    repository.get_random_phrase()
     //}
@@ -37,11 +40,15 @@ class MainViewModel (
         // do your network request logic here and return the result
     //}
 
-    fun set_phrase_tdate(id: Int) = CoroutineScope(Dispatchers.Main).launch {
-        repository.set_phrase_tdate(id)
-    }
+    //fun set_phrase_tdate(id: Int) = CoroutineScope(Dispatchers.Main).launch {
+    //    repository.set_phrase_tdate(id)
+    //}
 
     //val calendar = Calendar.getInstance()
     //fun create_day_phrase() = repository.create_day_phrase(calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.MONTH), calendar.get(Calendar.YEAR))
-    fun create_day_phrase() = repository.create_day_phrase(1, 1, 2001)
+    //fun create_day_phrase() = repository.create_day_phrase(1, 1, 2001)
+
+    //fun create_day_phrase() = CoroutineScope(Dispatchers.Main).launch {
+    //    repository.create_day_phrase(1, 1, 2001)
+    //}
 }

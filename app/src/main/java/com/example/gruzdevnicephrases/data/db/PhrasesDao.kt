@@ -20,11 +20,11 @@ interface PhrasesDao {
     suspend fun get_random_phrase(): List<Phrase>
 
     @Query("SELECT * FROM users_phrases WHERE phrase_tday = :d AND phrase_tmonth = :m AND phrase_tyear = :y")
-    fun get_day_phrase(d: Int, m: Int, y: Int): LiveData<List<Phrase>>
+    suspend fun get_day_phrase(d: Int, m: Int, y: Int): List<Phrase>
 
-    //@Query("UPDATE users_phrases SET phrase_tday = :d, phrase_tmonth = :m, phrase_tyear = :y WHERE id = (SELECT id FROM users_phrases ORDER BY RANDOM() LIMIT 1)")
-    @Query("UPDATE users_phrases SET phrase_tday = :d, phrase_tmonth = :m, phrase_tyear = :y")
-    fun create_day_phrase(d: Int, m: Int, y: Int)
+    @Query("UPDATE users_phrases SET phrase_tday = :d, phrase_tmonth = :m, phrase_tyear = :y WHERE id IN (SELECT id FROM users_phrases ORDER BY RANDOM() LIMIT 1)")
+    //@Query("UPDATE users_phrases SET phrase_tday = :d, phrase_tmonth = :m, phrase_tyear = :y")
+    suspend fun create_day_phrase(d: Int, m: Int, y: Int)
 
     @Query("SELECT * FROM users_phrases WHERE phrase_section_id = :sect")
     fun get_section_phrases(sect: Int): LiveData<List<Phrase>>
