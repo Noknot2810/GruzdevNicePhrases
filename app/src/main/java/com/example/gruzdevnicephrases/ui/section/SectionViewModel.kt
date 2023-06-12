@@ -19,4 +19,6 @@ class SectionViewModel (
     }
 
     fun get_all_phrases() = repository.get_all_phrases()
+
+    fun get_section_phrases(section_id: Int) = repository.get_section_phrases(section_id)
 }
