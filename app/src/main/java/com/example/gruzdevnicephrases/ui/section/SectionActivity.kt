@@ -41,7 +41,7 @@ class SectionActivity: AppCompatActivity(), KodeinAware {
         section_id = intent.extras?.getInt("section_id")
         section_name = intent.extras?.getString("section_name")
         if (section_name != null){
-            Toast.makeText(this, "${section_name!!} clicked!", Toast.LENGTH_SHORT / 2).show()
+            //Toast.makeText(this, "${section_name!!} clicked!", Toast.LENGTH_SHORT / 2).show()
             binding.txtSectionName.text = section_name!!
         }
 

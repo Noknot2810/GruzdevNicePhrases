@@ -68,15 +68,15 @@ class MainActivity : AppCompatActivity(), KodeinAware {
                     PhrList = derPhrList.await()
                     if (PhrList.size < 1){
                         binding.txtDayPhrase.text = "You haven't added a single phrase yet"
-                        binding.txtDayPhrase.setTextColor(Color.parseColor("#0aad3f"))
+                        binding.txtDayPhrase.setTextColor(Color.parseColor("#D84848"))
                     }
                     else{
-                        binding.txtDayPhrase.setTextColor(Color.parseColor("#000000"))
+                        binding.txtDayPhrase.setTextColor(Color.parseColor("#CCC6C6"))
                         binding.txtDayPhrase.text = "«" + PhrList[0].text + "»"
                     }
                 }
                 else{
-                    binding.txtDayPhrase.setTextColor(Color.parseColor("#000000"))
+                    binding.txtDayPhrase.setTextColor(Color.parseColor("#CCC6C6"))
                     binding.txtDayPhrase.text = "«" + PhrList[0].text + "»"
                 }
             }

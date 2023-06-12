@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainActivity"
-    android:padding="16dp">
+    android:background="@drawable/t1"
+    android:padding="16dp"
+    tools:context=".ui.main.MainActivity">
 
     <ImageView
         android:id="@+id/ivGetPhrases"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:src="@drawable/ic_plus_rating"
+        android:alpha="0.8"
+        android:src="@drawable/ic_get_phrases"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -19,7 +21,8 @@
         android:id="@+id/ivGetSections"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:src="@drawable/ic_minus_rating"
+        android:alpha="0.8"
+        android:src="@drawable/ic_get_sections"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -27,8 +30,9 @@
         android:id="@+id/ivDayPhrase"
         android:layout_width="111dp"
         android:layout_height="106dp"
+        android:alpha="0.8"
         android:layout_marginTop="32dp"
-        android:src="@drawable/ic_get_dphrase"
+        android:src="@drawable/ic_get_day_phrase"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtDayPhrase" />
@@ -38,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textColor="#CCC6C6"
         android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,6 +55,7 @@
         android:layout_height="wrap_content"
         android:text="Tap below to know the day phrase"
         android:textAlignment="center"
+        android:textColor="#CCC6C6"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
