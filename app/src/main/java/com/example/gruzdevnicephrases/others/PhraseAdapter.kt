@@ -6,6 +6,8 @@ import android.widget.RatingBar
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gruzdevnicephrases.data.db.entities.Phrase
 import com.example.gruzdevnicephrases.databinding.PhraseItemBinding
+import com.example.gruzdevnicephrases.ui.section.DelPhraseDialog
+import com.example.gruzdevnicephrases.ui.section.DelPhraseDialogListener
 import com.example.gruzdevnicephrases.ui.section.SectionViewModel
 
 class PhraseAdapter(
@@ -28,7 +30,16 @@ class PhraseAdapter(
                     " (" + curPhrase.gcount.toString() + ")"
 
             ivDelete.setOnClickListener {
-                viewModel.del_phrase(curPhrase)
+                DelPhraseDialog(
+                    holder.itemView.context,
+                    object : DelPhraseDialogListener {
+                        override fun onDelButtonClicked(item: Phrase) {
+                            viewModel.del_phrase(item)
+                        }
+                    },
+                    curPhrase).show()
+
+                //viewModel.del_phrase(curPhrase)
             }
 
             ratingPhrase.onRatingBarChangeListener =

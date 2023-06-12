@@ -11,8 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gruzdevnicephrases.data.db.entities.Section
 import com.example.gruzdevnicephrases.databinding.SectionItemBinding
 import com.example.gruzdevnicephrases.ui.section.SectionActivity
-import com.example.gruzdevnicephrases.ui.slist.SListViewModel
-import com.example.gruzdevnicephrases.ui.slist.SlistActivity
+import com.example.gruzdevnicephrases.ui.slist.*
 
 class SectionAdapter (
     var sections: List<Section>,
@@ -37,17 +36,6 @@ class SectionAdapter (
         }
     }
 
-    //{
-        //override fun View.OnClickListener(v: View){
-
-        //}
-
-        //fun onClick(p0: View) {
-
-        //    Toast.makeText(p0.context, "clicked!", Toast.LENGTH_SHORT / 2).show()
-        //}
-    //}
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SectionAdapter.SectionsViewHolder {
         val binding = SectionItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return SectionAdapter.SectionsViewHolder(binding)
@@ -60,15 +48,16 @@ class SectionAdapter (
             txtSectionName.text = curSect.name
 
             ivDelete.setOnClickListener {
-                viewModel.del_section(curSect)
+                DelSectionDialog(
+                    holder.itemView.context,
+                    object : DelSectionDialogListener {
+                        override fun onDelButtonClicked(item: Section) {
+                            viewModel.del_section(item)
+                        }
+                    },
+                    curSect).show()
+                //viewModel.del_section(curSect)
             }
-
-            //txtSectionName.setOnClickListener {
-            //    val intent = Intent(act, SectionActivity::class.java).apply {  }
-            //    startActivity(intent)
-
-
-            //}
         }
 
         holder.bind(sections[position])
