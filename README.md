@@ -1,5 +1,5 @@
 # GruzdevNicePhrases
-New version of [GruzdevSweetPhrases](https://github.com/Noknot2810/GruzdevSweetPhrases) written in Cotlin and using Room Database Android. The first experience with Cotlin.
+New version of [GruzdevSweetPhrases](https://github.com/Noknot2810/GruzdevSweetPhrases) written in Cotlin and using Room Database Android. The first experience using Android Studio and Cotlin.
 The app has pretty similar functionalities but
 * doesn't ask your name for day phrase selections
 * allows to delete phrases,
