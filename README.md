@@ -1,4 +1,3 @@
-![Icon](https://github.com/Noknot2810/GruzdevNicePhrases/assets/72942455/c5e21a23-fc2a-40c9-bc0d-c30334f7aec3)
 # GruzdevNicePhrases
 New version of [GruzdevSweetPhrases](https://github.com/Noknot2810/GruzdevSweetPhrases) written in Cotlin and using Room Database Android. The first experience with Cotlin.
 The app has pretty similar functionalities but
